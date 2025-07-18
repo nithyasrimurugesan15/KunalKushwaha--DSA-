@@ -1,0 +1,14 @@
+https://leetcode.com/problems/number-of-good-pairs/
+
+class Solution {
+    public int numIdenticalPairs(int[] nums) {
+        int ans=0;
+        int[] fre=new int[101];
+        for(int i:nums)
+        {
+            ans=ans+freq[i];
+            freq[i]=freq[i]+1;
+        }
+        return ans;
+    }
+}
