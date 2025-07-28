@@ -1,0 +1,31 @@
+https://www.geeksforgeeks.org/problems/kth-smallest-element5635/0
+
+class Solution 
+{
+    public static int kthSmallest(int[] arr, int k) 
+    {
+        int min=Integer.MAX_VALUE;
+        int index=-1;
+    for(int i=1;i<=k;i++)
+    {
+        min=Integer.MAX_VALUE;
+        for(int j=0;j<arr.length;j++)
+        {
+            if(arr[j]<min)
+            {
+                min=arr[j];
+                index=j;
+            }
+        }
+        if(index!=-1)
+        {
+            arr[index]=Integer.MAX_VALUE;
+        }
+    }
+       return min; 
+    }
+}
+
+
+
+
