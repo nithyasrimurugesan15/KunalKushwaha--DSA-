@@ -1,5 +1,6 @@
 https://leetcode.com/problems/build-array-from-permutation/    
 
+Brute:
 class Solution {
     public int[] buildArray(int[] nums) 
     {
@@ -9,5 +10,23 @@ class Solution {
             ans[i]=nums[nums[i]];
         }
         return ans;
+    }
+}
+
+solve it without using an extra space (i.e., O(1) memory)--> OPTIMISED
+T.C:O(N)+O(N)-->O(N)
+S.C:O(1)
+
+class Solution {
+    public int[] buildArray(int[] nums) {
+        for(int i=0;i<nums.length;i++)
+        {
+            nums[i]=nums[i]+(1024*(nums[nums[i]]%1024));
+        }
+        for(int i=0;i<nums.length;i++)
+        {
+            nums[i]=nums[i]/1024;
+        }
+        return nums;
     }
 }
