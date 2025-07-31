@@ -1,5 +1,29 @@
 https://leetcode.com/problems/concatenation-of-array/
 
+1.
+
+T.C--> O(N)
+S.C-->O(N)
+
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int n=nums.length;
+        int[] ans=new int[2*n];
+        for(int i=0;i<n;i++)
+        {
+            ans[i]=nums[i];
+            ans[i+n]=nums[i];
+        }
+      return ans;
+        
+    }
+}
+
+2.
+
+T.C--> O(N)+O(N)-->O(N)
+S.C-->O(N)
+
 class Solution {
     public int[] getConcatenation(int[] nums) {
         int n=nums.length;
@@ -16,3 +40,27 @@ class Solution {
         
     }
 }
+
+3.
+
+T.C--> O(N)
+S.C-->O(N)
+
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int n=nums.length;
+        int[] ans=new int[2*n];
+        System.arraycopy(nums,0,ans,0,n);
+        System.arraycopy(nums,0,ans,n,n);
+      return ans;
+        
+    }
+}
+
+
+
+
+
+
+
+
