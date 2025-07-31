@@ -1,5 +1,28 @@
 https://leetcode.com/problems/running-sum-of-1d-array/
 
+1. WITHOUT USING ANY (SUM) VARIABLE;
+
+T.C-->O(N)
+S.C-->O(1)
+
+class Solution {
+    public int[] runningSum(int[] nums) 
+    {
+        
+        for(int i=1;i<nums.length;i++)
+        {
+            nums[i]=nums[i-1]+nums[i];
+        }
+        return nums;
+    }
+}
+
+
+2.
+
+T.C-->O(N)
+S.C-->O(N)
+
 class Solution {
     public int[] runningSum(int[] nums) 
     {
@@ -12,3 +35,23 @@ class Solution {
         return nums;
     }
 }
+
+3.
+
+T.C-->O(N)
+S.C-->O(N)
+
+class Solution {
+    public int[] runningSum(int[] nums) 
+    {
+         int sum=0;
+        int[] ans=new int[nums.length];
+        for(int i=0;i<nums.length;i++)
+        {
+            sum+=nums[i];
+            ans[i]=sum;
+        }
+        return ans;
+    }
+}
+
